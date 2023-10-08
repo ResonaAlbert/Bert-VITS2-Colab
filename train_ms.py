@@ -11,6 +11,12 @@ from torch.cuda.amp import autocast, GradScaler
 from tqdm import tqdm
 import logging
 
+os.environ['MASTER_ADDR'] = '127.0.0.1'
+os.environ['MASTER_PORT'] = '8880'
+os.environ['WORLD_SIZE'] = '1'
+os.environ['RANK'] = '0'
+
+
 logging.getLogger("numba").setLevel(logging.WARNING)
 import commons
 import utils
